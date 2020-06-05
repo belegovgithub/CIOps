@@ -25,6 +25,8 @@ spec:
           secretKeyRef:
             name: jenkins-credentials
             key: gitReadAccessToken 
+       - name: REPO_NAME
+       - value: "docker.io/belegovgithub"
       - name: token
         valueFrom:
           secretKeyRef:
