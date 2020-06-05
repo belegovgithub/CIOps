@@ -29,16 +29,12 @@ spec:
         valueFrom:
           secretKeyRef:
             name: jenkins-credentials
-            key: gitReadAccessToken             
-      - name: "GOOGLE_APPLICATION_CREDENTIALS"
-        value: "/var/run/secret/cloud.google.com/service-account.json"             
+            key: gitReadAccessToken            
     volumeMounts:
       - name: jenkins-docker-cfg
         mountPath: /root
       - name: kaniko-cache
-        mountPath: /cache  
-      - name: service-account
-        mountPath: /var/run/secret/cloud.google.com        
+        mountPath: /cache        
     resources:
       requests:
         memory: "1792Mi"
@@ -56,10 +52,7 @@ spec:
   - name: kaniko-cache
     persistentVolumeClaim:
       claimName: kaniko-cache-claim
-      readOnly: true      
-  - name: service-account
-    secret:
-        secretName: "gcp-docker-push-sa"      
+      readOnly: true  
   - name: jenkins-docker-cfg
     projected:
       sources:
