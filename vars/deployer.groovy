@@ -21,8 +21,8 @@ spec:
         memory: "256Mi"
         cpu: "200m"
       limits:
-        memory: "256Mi"
-        cpu: "200m"  
+        memory: "2048Mi"
+        cpu: "2000m"  
   volumes:
   - name: kube-config
     secret:
