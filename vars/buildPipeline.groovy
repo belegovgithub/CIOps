@@ -132,7 +132,7 @@ spec:
                                     --snapshotMode=time \
                                     --destination=${image} \
                                     --no-push=${noPushImage} \
-                                    --cache-repo=belegovgithub/cache/cache
+                                    --cache-repo=docker.io/belegovgithub/cache/cache
                                 """
                                 echo "${image} pushed successfully!"
                                 }
