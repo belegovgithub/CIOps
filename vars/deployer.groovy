@@ -13,7 +13,7 @@ spec:
     command:
     - cat
     tty: true
-	env:
+    env:
     - name: AWS_ACCESS_KEY_ID
       valueFrom:
         secretKeyRef:
