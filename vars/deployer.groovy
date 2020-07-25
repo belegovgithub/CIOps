@@ -13,6 +13,17 @@ spec:
     command:
     - cat
     tty: true
+	env:
+    - name: AWS_ACCESS_KEY_ID
+      valueFrom:
+        secretKeyRef:
+          name: aws-secret
+          key: key-id
+    - name: AWS_SECRET_ACCESS_KEY
+      valueFrom:
+        secretKeyRef:
+          name: aws-secret
+          key: access-key			  
     volumeMounts:
       - name: kube-config
         mountPath: /root/.kube     
