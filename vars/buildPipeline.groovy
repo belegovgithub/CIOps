@@ -102,6 +102,7 @@ spec:
 
                                 String workDir = buildConfig.getWorkDir().replaceFirst(getCommonBasePath(buildConfig.getWorkDir(), buildConfig.getDockerFile()), "./")
                                 String image = "${REPO_NAME}/${buildConfig.getImageName()}:${env.BUILD_NUMBER}-${scmVars.BRANCH}-${scmVars.ACTUAL_COMMIT}";
+                                String imageLatest = "${REPO_NAME}/${buildConfig.getImageName()}:latest";
                                 String noPushImage = env.NO_PUSH ? env.NO_PUSH : false;
                                 echo "ALT_REPO_PUSH ENABLED: ${ALT_REPO_PUSH}"
                                  if(env.ALT_REPO_PUSH.equalsIgnoreCase("true")){
@@ -131,6 +132,7 @@ spec:
                                     --single-snapshot=true \
                                     --snapshotMode=time \
                                     --destination=${image} \
+                                    --destination=${imageLatest} \
                                     --no-push=${noPushImage} \
                                     --cache-repo=docker.io/belegovgithub/cache
                                 """
