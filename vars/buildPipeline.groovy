@@ -112,13 +112,11 @@ spec:
                                     /kaniko/executor -f `pwd`/${buildConfig.getDockerFile()} -c `pwd`/${buildConfig.getContext()} \
                                     --build-arg WORK_DIR=${workDir} \
                                     --build-arg token=\$GIT_ACCESS_TOKEN \
-                                    --cache=true --cache-dir=/cache \
                                     --single-snapshot=true \
                                     --snapshotMode=time \
                                     --destination=${image} \
                                     --destination=${gcr_image} \
-                                    --no-push=${noPushImage} \
-                                    --cache-repo=egovio/cache/cache
+                                    --no-push=${noPushImage} 
                                   """  
                                   echo "${image} and ${gcr_image} pushed successfully!!"                              
                                 }
@@ -128,13 +126,11 @@ spec:
                                     /kaniko/executor -f `pwd`/${buildConfig.getDockerFile()} -c `pwd`/${buildConfig.getContext()} \
                                     --build-arg WORK_DIR=${workDir} \
                                     --build-arg token=\$GIT_ACCESS_TOKEN \
-                                    --cache=true --cache-dir=/cache \
                                     --single-snapshot=true \
                                     --snapshotMode=time \
                                     --destination=${image} \
                                     --destination=${imageLatest} \
-                                    --no-push=${noPushImage} \
-                                    --cache-repo=docker.io/belegovgithub/cache
+                                    --no-push=${noPushImage} 
                                 """
                                 echo "${image} pushed successfully!"
                                 }
