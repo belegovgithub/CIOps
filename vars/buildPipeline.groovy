@@ -39,11 +39,11 @@ spec:
         mountPath: /cache        
     resources:
       requests:
-        memory: "1792Mi"
-        cpu: "750m"
+        memory: "4096Mi"
+        cpu: "2500m"
       limits:
-        memory: "5120Mi"
-        cpu: "3000m"      
+        memory: "4096Mi"
+        cpu: "2500m"      
   - name: git
     image: docker.io/nithindv/alpine-git:latest
     imagePullPolicy: IfNotPresent
