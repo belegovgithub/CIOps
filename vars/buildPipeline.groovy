@@ -40,10 +40,10 @@ spec:
     resources:
       requests:
         memory: "4096Mi"
-        cpu: "2500m"
+        cpu: "1250m"
       limits:
         memory: "4096Mi"
-        cpu: "2500m"      
+        cpu: "1250m"      
   - name: git
     image: docker.io/nithindv/alpine-git:latest
     imagePullPolicy: IfNotPresent
